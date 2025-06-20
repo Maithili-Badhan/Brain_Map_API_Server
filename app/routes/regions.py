@@ -16,3 +16,16 @@ def get_all_regions():
             "function": r.function
         } for r in regions
     ])
+
+@regions_bp.route('/regions/<int:region_id>', methods=['GET'])
+def get_region(region_id):
+    region = BrainRegion.query.get(region_id)
+    if region:
+        return jsonify({
+            "id": region.id,
+            "name": region.name,
+            "description": region.description,
+            "function": region.function
+        }), 200
+    else:
+        return jsonify({"error": "Region not found"}), 404
