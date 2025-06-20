@@ -72,3 +72,13 @@ def update_region(region_id):
         "description": region.description,
         "function": region.function
     }), 200
+
+@regions_bp.route('/<int:region_id>', methods=['DELETE'])
+def delete_region(region_id):
+    region = BrainRegion.query.get(region_id)
+    if region:
+        db.session.delete(region)
+        db.session.commit()
+        return jsonify({"message": "Region deleted"}), 200
+    else:
+        return jsonify({"error": "Region not found"}), 404
