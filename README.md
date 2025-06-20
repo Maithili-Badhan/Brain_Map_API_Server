@@ -171,8 +171,6 @@ This project followed an **Agile approach**:
 * [ ] Integrate [Keploy](https://keploy.io) for record-replay API testing
 * [ ] Add Docker support
 * [ ] Deploy to a public cloud or localhost Docker container
-* [ ] Add API documentation via Swagger or Postman collection
-* [ ] Deploy publicly or via localhost container
 * [ ] Switch to PostgreSQL
 
 ---
