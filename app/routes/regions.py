@@ -5,7 +5,7 @@ from app.models import BrainRegion
 
 regions_bp = Blueprint("regions", __name__)
 
-@regions_bp.route("/", methods=["GET"])
+@regions_bp.route('/', methods=['GET'])
 def get_all_regions():
     regions = BrainRegion.query.all()
     return jsonify([
@@ -17,7 +17,7 @@ def get_all_regions():
         } for r in regions
     ])
 
-@regions_bp.route('/regions/<int:region_id>', methods=['GET'])
+@regions_bp.route('/<int:region_id>', methods=['GET'])  # ✅ FIXED
 def get_region(region_id):
     region = BrainRegion.query.get(region_id)
     if region:
