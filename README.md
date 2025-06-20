@@ -177,5 +177,5 @@ This project followed an **Agile approach**:
 
 ## 👏 Credits
 
-Built by **\Maithili Badhan** as part of the Keploy Fellowship Phase 1.
+Built by **Maithili Badhan** as part of the Keploy API Fellowship.
 Exploring end-to-end API lifecycle with testing, frontend, and DevOps.
