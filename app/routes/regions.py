@@ -52,3 +52,23 @@ def create_region():
         "description": new_region.description,
         "function": new_region.function
     }), 201
+
+@regions_bp.route('/<int:region_id>', methods=['PUT'])
+def update_region(region_id):
+    region = BrainRegion.query.get(region_id)
+    if not region:
+        return jsonify({"error": "Region not found"}), 404
+
+    data = request.get_json()
+    for field in ["name", "description", "function"]:
+        if field in data:
+            setattr(region, field, data[field])
+    
+    db.session.commit()
+
+    return jsonify({
+        "id": region.id,
+        "name": region.name,
+        "description": region.description,
+        "function": region.function
+    }), 200
