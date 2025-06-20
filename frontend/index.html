@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Map API Tester</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>🧠 Brain Region API Dashboard</h1>
+
+  <div class="actions">
+    <button onclick="getAllRegions()">Get All Regions</button>
+    <input type="number" id="regionId" placeholder="Region ID" />
+    <button onclick="getOneRegion()">Get Region by ID</button>
+    <button onclick="postRegion()">Create Region</button>
+    <button onclick="updateRegion()">Update Region</button>
+    <button onclick="deleteRegion()">Delete Region</button>
+  </div>
+
+  <pre id="result" style="color: white;">API response will show here...</pre>
+
+  <script src="js/api.js"></script>
+</body>
+</html>
