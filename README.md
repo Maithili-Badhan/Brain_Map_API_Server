@@ -131,6 +131,24 @@ pytest
 
 ---
 
+---
+
+## ✅ Testing Overview (After Task 2)
+
+📂 Tests organized into:
+- `tests/unit_tests/` – Unit tests (mocking + non-mocking)
+- `tests/integration_tests/` – End-to-end DB integration
+- `tests/api_tests/` – Full API endpoint validation
+
+📊 **Test Coverage: 94%**
+
+✔️ Meets requirement of 70%+  
+✔️ Pytest used with `pytest-cov`  
+✔️ Mocking done via `unittest.mock`
+
+📸 Coverage Screenshot:
+![coverage](<>)
+
 ## 📦 DevOps Readiness
 
 * ✅ Structured in feature-based Git branches
