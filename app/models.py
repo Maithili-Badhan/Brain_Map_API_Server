@@ -8,3 +8,6 @@ class BrainRegion(db.Model):
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
     function = db.Column(db.String(255))
+
+    def __repr__(self):
+        return f"<BrainRegion {self.name}>"
