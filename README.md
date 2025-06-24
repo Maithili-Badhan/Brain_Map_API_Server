@@ -131,8 +131,6 @@ pytest
 
 ---
 
----
-
 ## ✅ Testing Overview (After Task 2)
 
 📂 Tests organized into:
@@ -146,8 +144,8 @@ pytest
 ✔️ Pytest used with `pytest-cov`  
 ✔️ Mocking done via `unittest.mock`
 
-📸 Coverage Screenshot:
-![coverage](<>)
+📸 Coverage:
+![coverage](<images/coverage.png>)
 
 ## 📦 DevOps Readiness
 
