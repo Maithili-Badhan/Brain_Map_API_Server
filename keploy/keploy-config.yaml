@@ -1,0 +1,11 @@
+app:
+  port: 5000
+  testReportPath: ./keploy/reports  # Optional custom path
+
+keploy:
+  container: false
+  testMode: true
+  noise:
+    - time
+    - date
+    - timestamp

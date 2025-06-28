@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Brain Map API
+  version: 1.0.0
+  description: API for managing brain regions and their metadata.
+
+servers:
+  - url: http://localhost:5000
+
+paths:
+  /api/regions:
+    get:
+      summary: Get all brain regions
+      responses:
+        '200':
+          description: A list of brain regions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Region'
+
+    post:
+      summary: Add a new brain region
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+      responses:
+        '201':
+          description: Region added
+
+  /api/regions/{id}:
+    get:
+      summary: Get a single brain region by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A single region
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+
+    put:
+      summary: Update a brain region
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+      responses:
+        '200':
+          description: Region updated
+
+    delete:
+      summary: Delete a brain region
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Region deleted
+
+components:
+  schemas:
+    Region:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
